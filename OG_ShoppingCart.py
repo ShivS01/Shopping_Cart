@@ -1,4 +1,4 @@
-#test
+
 from tkinter import *
 master = Tk()
 thislist = ["perfume", "faces lipstick", "plecktrum", "jewellery box", "sanitizer", "lakme moisturizer", "addidas hoodie", "cover story jeans", "coffee mug", "vans sneakers"]
