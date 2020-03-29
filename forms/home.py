@@ -58,7 +58,7 @@ class FormMenu:
         self.toolbar.imgcalc=PhotoImage(file=imgdir+"calc.gif")
         self.toolbar.imgcalander=PhotoImage(file=imgdir+"date.gif")
         self.toolbar.imgexit=PhotoImage(file=imgdir+"exit.gif")
-        self.toolbar.imghelp=PhotoImage(file=imgdir+"help.gif")
+        self.toolbar.imghelp=PhotoImage(file=imgdir+"help.png")
 
         butcompany=Button(self.toolbar,image=self.toolbar.imghome,command=self.calc_click)
         butcompany.pack(side=LEFT,padx=2)
@@ -80,12 +80,12 @@ class FormMenu:
         #buttons frame
         #--------------------------------------------
         style = Style()
-        style.configure("BW.TLabel", foreground="grey", background="black")
+        style.configure("BW.TLabel", foreground="white", background="black")
         self.buttons = Frame(self.frame, style="BW.TLabel")
 
         #button products
         self.btnproducts = Button(self.buttons,command=self.products_click)
-        self.imgprdt=PhotoImage(file="images/products.gif")#self.btnproducts['font']=("Helvetica", 16)
+        self.imgprdt=PhotoImage(file="images/products.png")#self.btnproducts['font']=("Helvetica", 16)
         self.btnproducts['image']=self.imgprdt
         self.btnproducts.pack(side='top')#, fill='x')
         lbl1=Label(self.buttons,text="Products", style="BW.TLabel").pack()
@@ -99,7 +99,7 @@ class FormMenu:
 
         #button customers
         self.btncustomers = Button(self.buttons, command=self.addinvoice_click)
-        self.imgcust=PhotoImage(file="images/customers.gif")
+        self.imgcust=PhotoImage(file="images/customers.png")
         self.btncustomers['image']=self.imgcust
         self.btncustomers.pack(side='top')
         lbl3=Label(self.buttons,text="Create Invoice", style="BW.TLabel").pack()
