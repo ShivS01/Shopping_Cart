@@ -9,6 +9,7 @@ from forms import home
 models.create_tables_if_not_exist()
 root=home.Tk()
 root['bg']='black'
-root.resizable(0,0)
+#root.resizable(0,0)
 frmmenu=home.FormMenu(root)
+root.title("Shopping Cart V-1.0")
 root.mainloop()

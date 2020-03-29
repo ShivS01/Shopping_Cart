@@ -42,22 +42,24 @@ class FormMenu:
 
     def about_click(self):
         w=Toplevel()
-        lbl1=Label(w,text="Welcome to pyinventory. version 1.2")
+        lbl1=Label(w,text="Welcome to Shopping Cart 1.0")
         lbl1.pack(side="top",padx=10,pady=10)
-        lbl3=Label(w,text="for help contact me at: suhailvs@gmail.com")
+        lbl3=Label(w,text="Team Members : Shivanshu, Harsha, Hemanth, Pranav")
         lbl3.pack(side="top",padx=10,pady=10)
-        lbl3=Label(w,text="https://github.com/suhailvs/pyinventory")
+        lbl3=Label(w,text="https://github.com/ShivS01/Shopping_Cart")
         lbl3.pack(side="top",padx=10,pady=10)
         
     def _init_widgets(self):
         #initiate toolbar
         self.toolbar = Frame(self.frame)
         imgdir="images/24x24/"
+
         self.toolbar.imghome=PhotoImage(file=imgdir+"home.gif")
         self.toolbar.imgcalc=PhotoImage(file=imgdir+"calc.gif")
         self.toolbar.imgcalander=PhotoImage(file=imgdir+"date.gif")
         self.toolbar.imgexit=PhotoImage(file=imgdir+"exit.gif")
         self.toolbar.imghelp=PhotoImage(file=imgdir+"help.gif")
+
         butcompany=Button(self.toolbar,image=self.toolbar.imghome,command=self.calc_click)
         butcompany.pack(side=LEFT,padx=2)
         lbl0=Label(self.toolbar,text='Select Company.').pack(side=LEFT,padx=5)
@@ -69,14 +71,16 @@ class FormMenu:
         
         butexit=Button(self.toolbar,image=self.toolbar.imgexit,command=self.frame.quit)
         butexit.pack(side=RIGHT,padx=2)
+
         buthelp=Button(self.toolbar,image=self.toolbar.imghelp,command=self.about_click)
         buthelp.pack(side=RIGHT,padx=2)
+
         self.toolbar.pack(side='top',fill='x')
                 
         #buttons frame
         #--------------------------------------------
         style = Style()
-        style.configure("BW.TLabel", foreground="white", background="black")
+        style.configure("BW.TLabel", foreground="white", background="black",fill='y')
         self.buttons = Frame(self.frame, style="BW.TLabel")
         #button products
         self.btnproducts = Button(self.buttons,command=self.products_click)
@@ -100,7 +104,7 @@ class FormMenu:
 
         #background label
         #-------------------------------------------
-        self.imgback=PhotoImage(file="images/back.gif")
+        self.imgback=PhotoImage(file="images/Ignite.png")
         self.lblbackground= Label(self.frame, style="BW.TLabel",borderwidth=0)
         self.lblbackground.pack(side='top')
         self.lblbackground['image'] = self.imgback
@@ -149,4 +153,3 @@ class FormMenu:
         self.frm_invoices=FormAddInvoice()
         self.frame.wait_window(self.frm_invoices.frame)
         self.frame.deiconify()
-        
