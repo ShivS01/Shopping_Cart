@@ -62,7 +62,7 @@ class FormMenu:
 
         butcompany=Button(self.toolbar,image=self.toolbar.imghome,command=self.calc_click)
         butcompany.pack(side=LEFT,padx=2)
-        lbl0=Label(self.toolbar,text='Select Company.').pack(side=LEFT,padx=5)
+        #lbl0=Label(self.toolbar,text='Select Company.').pack(side=LEFT,padx=5)
                
         butcalc=Button(self.toolbar,image=self.toolbar.imgcalc,command=self.calc_click)
         butcalc.pack(side=LEFT,padx=2)
@@ -80,33 +80,33 @@ class FormMenu:
         #buttons frame
         #--------------------------------------------
         style = Style()
-        style.configure("BW.TLabel", foreground="white", background="black",fill='y')
+        style.configure("BW.TLabel", foreground="white", background="black")
         self.buttons = Frame(self.frame, style="BW.TLabel")
         #button products
         self.btnproducts = Button(self.buttons,command=self.products_click)
         self.imgprdt=PhotoImage(file="images/products.gif")#self.btnproducts['font']=("Helvetica", 16)
         self.btnproducts['image']=self.imgprdt
         self.btnproducts.pack(side='top')#, fill='x')
-        lbl1=Label(self.buttons,text="Products...", style="BW.TLabel").pack()
+        lbl1=Label(self.buttons,text="Products", style="BW.TLabel").pack()
         #button invoices
         self.btninvoices = Button(self.buttons, command=self.invoices_click)
         self.imginv=PhotoImage(file="images/invoices.gif")
         self.btninvoices['image']=self.imginv
         self.btninvoices.pack(side='top')
-        lbl2=Label(self.buttons,text="Invoices...", style="BW.TLabel").pack()
+        lbl2=Label(self.buttons,text="Invoices", style="BW.TLabel").pack()
         #button customers
         self.btncustomers = Button(self.buttons, command=self.addinvoice_click)
         self.imgcust=PhotoImage(file="images/customers.gif")
         self.btncustomers['image']=self.imgcust
         self.btncustomers.pack(side='top')
-        lbl3=Label(self.buttons,text="Create Invoice...", style="BW.TLabel").pack()
+        lbl3=Label(self.buttons,text="Create Invoice", style="BW.TLabel").pack()
         self.buttons.pack(side='left',padx=10)
 
         #background label
         #-------------------------------------------
         self.imgback=PhotoImage(file="images/Ignite.png")
         self.lblbackground= Label(self.frame, style="BW.TLabel",borderwidth=0)
-        self.lblbackground.pack(side='top')
+        self.lblbackground.pack(side='top',pady=50)
         self.lblbackground['image'] = self.imgback
 
     def calc_click(self):
