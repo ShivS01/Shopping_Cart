@@ -4,6 +4,7 @@ from modules.tkcalendar import ttkCalendar
 from forms.products import FormProducts
 from forms.invoices import FormInvoices
 from forms.addinvoice import FormAddInvoice
+from modules.tktooltip import CreateToolTip
 
 class FormMenu:
     """This is the main form that shows after user login.
@@ -18,6 +19,7 @@ class FormMenu:
     """
     def __init__(self,master):
         self.frame=master
+        master.title("Shopping Cart V-1.0")
         self.frm_invoices=None
         self.frm_calendar=None
         self._init_menu()
@@ -63,18 +65,26 @@ class FormMenu:
 
         butcompany=Button(self.toolbar,image=self.toolbar.imghome,command="")
         butcompany.pack(side=LEFT,padx=2)
-        #lbl0=Label(self.toolbar,text='Select Company.').pack(side=LEFT,padx=5)
-               
+        CreateToolTip(butcompany, text='Choose a company')
+
         butcalc=Button(self.toolbar,image=self.toolbar.imgcalc,command=self.calc_click)
         butcalc.pack(side=LEFT,padx=2)
+        CreateToolTip(butcalc, text='Open Calculator')
+
+
         butcalendar=Button(self.toolbar,image=self.toolbar.imgcalander,command=self.calendar_click)
         butcalendar.pack(side=LEFT,padx=2)
-        
+        CreateToolTip(butcalendar, text='Open Calender')
+
         butexit=Button(self.toolbar,image=self.toolbar.imgexit,command=self.frame.quit)
         butexit.pack(side=RIGHT,padx=2)
+        CreateToolTip(butexit, text='Exit')
+
 
         buthelp=Button(self.toolbar,image=self.toolbar.imghelp,command=self.about_click)
         buthelp.pack(side=RIGHT,padx=2)
+        CreateToolTip(buthelp, text='Help')
+
 
         self.toolbar.pack(side='top',fill='x')
                 

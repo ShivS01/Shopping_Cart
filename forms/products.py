@@ -3,12 +3,11 @@ from tkinter.ttk import *
 from modules.tklistview import MultiListbox
 from modules.tktoolbar import _init_toolbar
 from models import Inventory_Product as Product
-
 class FormProducts:
     '''The Products window with toolbar and a datagrid of products'''
     def __init__(self):
         self.frame=Toplevel()
-        self.frame.title("Products Interface")
+        self.frame.title("Products Management Interface - Inventory")
         _init_toolbar(self)
         self._init_gridbox()
         self.frm_addproduct=None

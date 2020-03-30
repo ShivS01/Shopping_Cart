@@ -11,5 +11,4 @@ root=home.Tk()
 root['bg']='black'
 #root.resizable(0,0)
 frmmenu=home.FormMenu(root)
-root.title("Shopping Cart V-1.0")
 root.mainloop()

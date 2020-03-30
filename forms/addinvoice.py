@@ -11,7 +11,7 @@ class FormAddInvoice:
     '''Add New product three labels and three textboxes and an OK button'''
     def __init__(self):        
         self.frame=Toplevel()
-        self.frame.title("Create a New Invoice")
+        self.frame.title("Cashier Interface - Take an order")
         self.frame.protocol("WM_DELETE_WINDOW", self.callback) #user quit the screen
         self._init_widgets()        
         
