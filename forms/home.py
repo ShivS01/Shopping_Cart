@@ -18,14 +18,13 @@ class FormMenu:
     """
     def __init__(self,master):
         self.frame=master
-        #self.frame.title="Shop Pro using Python & Tkinter by Suhail"
         self.frm_invoices=None
         self.frm_calendar=None
         self._init_menu()
         self._init_widgets()
         
     def _init_menu(self):
-        self.frame.bind("<KeyPress>",self.keypressed)
+       # self.frame.bind("<KeyPress>",self.keypressed)
         
         self.menu = Menu(self.frame)
         self.frame.config(menu=self.menu)
@@ -42,6 +41,7 @@ class FormMenu:
 
     def about_click(self):
         w=Toplevel()
+        w.title("About")
         lbl1=Label(w,text="Welcome to Shopping Cart 1.0")
         lbl1.pack(side="top",padx=10,pady=10)
         lbl3=Label(w,text="Team Members : Shivanshu, Harsha, Hemanth, Pranav")
@@ -52,6 +52,7 @@ class FormMenu:
     def _init_widgets(self):
         #initiate toolbar
         self.toolbar = Frame(self.frame)
+
         imgdir="images/24x24/"
 
         self.toolbar.imghome=PhotoImage(file=imgdir+"home.png")
@@ -60,7 +61,7 @@ class FormMenu:
         self.toolbar.imgexit=PhotoImage(file=imgdir+"exit.gif")
         self.toolbar.imghelp=PhotoImage(file=imgdir+"help.png")
 
-        butcompany=Button(self.toolbar,image=self.toolbar.imghome,command=self.calc_click)
+        butcompany=Button(self.toolbar,image=self.toolbar.imghome,command="")
         butcompany.pack(side=LEFT,padx=2)
         #lbl0=Label(self.toolbar,text='Select Company.').pack(side=LEFT,padx=5)
                
@@ -80,7 +81,7 @@ class FormMenu:
         #buttons frame
         #--------------------------------------------
         style = Style()
-        style.configure("BW.TLabel", foreground="white", background="black")
+        style.configure("BW.TLabel", foreground="white", background="blue")
         self.buttons = Frame(self.frame, style="BW.TLabel")
 
         #button products
@@ -103,13 +104,16 @@ class FormMenu:
         self.btncustomers['image']=self.imgcust
         self.btncustomers.pack(side='top')
         lbl3=Label(self.buttons,text="Create Invoice", style="BW.TLabel").pack()
-        self.buttons.pack(side='left',padx=10)
+
+        self.buttons.pack(side='left',padx=10,fill='x',expand=True)
 
         #background label
         #-------------------------------------------
         self.imgback=PhotoImage(file="images/logo2.png")
         self.lblbackground= Label(self.frame, style="BW.TLabel",borderwidth=0)
-        self.lblbackground.pack(side='top',pady=0)
+
+        #Second Col -- in widgets
+        self.lblbackground.pack(side='left',padx=10,fill='both')
         self.lblbackground['image'] = self.imgback
 
 
@@ -118,7 +122,7 @@ class FormMenu:
         try: os.startfile('calc.exe')
         except: print ('calculator doesnt exist')
 
-    #calendar-------    
+    #calendar-------
     def calendar_click(self):
         if self.frm_calendar==None:
             self.frm_calendar=ttkCalendar(master=self.frame)
@@ -131,14 +135,15 @@ class FormMenu:
         self.frame.wait_window(self.frm_calendar.top)
         print (self.frm_calendar.datepicked)
 
+        ''''
     def keypressed(self,e):
         #33 p, 31 i, 54 c
         if e.keycode == 33: self.products_click()
         elif e.keycode == 31: self.invoices_click()
         elif e.keycode == 54: self.addinvoice_click()
-        
+        '''
     def products_click(self):
-        print ("products")
+        print("products")
         self.frame.withdraw()
         self.frm_products=FormProducts()
         self.frame.wait_window(self.frm_products.frame)

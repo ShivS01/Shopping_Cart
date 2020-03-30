@@ -20,6 +20,7 @@ def label_entry(frmlblent,txtlbl,txtlbl2=None):
 class FormInvoices:
     def __init__(self):
         self.frame=Toplevel()
+        self.frame.title("Invoice List")
         _init_toolbar(self)
         self._init_gridbox()
         self.frm_addinvoice=None

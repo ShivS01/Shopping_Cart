@@ -8,6 +8,7 @@ class FormProducts:
     '''The Products window with toolbar and a datagrid of products'''
     def __init__(self):
         self.frame=Toplevel()
+        self.frame.title("Products Interface")
         _init_toolbar(self)
         self._init_gridbox()
         self.frm_addproduct=None
