@@ -81,8 +81,8 @@ class FormMenu:
         #buttons frame
         #--------------------------------------------
         style = Style()
-        style.configure("BW.TLabel", foreground="white", background="blue")
-        self.buttons = Frame(self.frame, style="BW.TLabel")
+        style.configure("BW.TLabel", foreground="white", background="black")
+        self.buttons = Label(self.frame, style="BW.TLabel",borderwidth=0,anchor='e')
 
         #button products
         self.btnproducts = Button(self.buttons,command=self.products_click)
@@ -105,15 +105,15 @@ class FormMenu:
         self.btncustomers.pack(side='top')
         lbl3=Label(self.buttons,text="Create Invoice", style="BW.TLabel").pack()
 
-        self.buttons.pack(side='left',padx=10,fill='x',expand=True)
+        self.buttons.pack(side='left',expand=YES)
 
         #background label
         #-------------------------------------------
         self.imgback=PhotoImage(file="images/logo2.png")
-        self.lblbackground= Label(self.frame, style="BW.TLabel",borderwidth=0)
+        self.lblbackground= Label(self.frame, style="BW.TLabel",borderwidth=0,anchor='w')
 
         #Second Col -- in widgets
-        self.lblbackground.pack(side='left',padx=10,fill='both')
+        self.lblbackground.pack(side='left',fill=BOTH,expand=YES)
         self.lblbackground['image'] = self.imgback
 
 
