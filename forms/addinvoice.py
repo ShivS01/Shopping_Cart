@@ -17,10 +17,10 @@ class FormAddInvoice:
         
     def _init_widgets(self):
         self.frame1=Frame(self.frame)
-        invoices.label_entry(self.frame1,'Customer:')
-        self.lbl_date=Label(self.frame1,text='Date:'+str(datetime.today())[:10])
-        self.lbl_date.pack(side=LEFT,padx=10)
-        self.frame1.pack(side=TOP,anchor=W,pady=10)
+        invoices.label_entry(self.frame1,'Customer:  ')
+        self.lbl_date=Label(self.frame1,text='\t\tDate:  '+str(datetime.today())[:10])
+        self.lbl_date.pack(side=RIGHT,padx=10)
+        self.frame1.pack(side=TOP,anchor=CENTER,pady=10)
 
         #frame2- lookuplist
         self.frame2=LookupList(self.frame)
@@ -41,7 +41,7 @@ class FormAddInvoice:
         self.btn_additem=Button(self.frame3,text="Add Item",width=8,
                                 command=self.btn_additem_click)
         self.btn_additem.pack(side=LEFT)
-        self.frame3.pack(side=TOP,anchor=E)
+        self.frame3.pack(side=TOP,anchor=CENTER)
 
         #frame4- mlbitems 
         self.frame4=Frame(self.frame)
@@ -75,7 +75,7 @@ class FormAddInvoice:
             Press <Enter> to create invoice.
             Press <Escape> to close.""")
         lbl_ent_paid_help.pack(side=LEFT)
-        self.frame5.pack(side=TOP,anchor=E)
+        self.frame5.pack(side=TOP,anchor=CENTER)
 
         self.btn_ok=Button(self.frame,text="Add Invoice",width=15,command=self.btnok_click)
         self.btn_ok.pack(side=TOP)
