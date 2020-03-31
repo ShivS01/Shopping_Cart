@@ -60,6 +60,7 @@ class FormAddProduct:
     def __init__(self):
         
         self.frame=Toplevel()
+        self.frame.title("Add a Product")
         self.frame.protocol("WM_DELETE_WINDOW", self.callback) #user quit the screen
         self._init_widgets()
         
@@ -75,7 +76,7 @@ class FormAddProduct:
         self.entry2=Entry(self.frame)
         self.entry2.grid(row=1,column=1)
 
-        self.label3=Label(self.frame,text="Description.")
+        self.label3=Label(self.frame,text="Description")
         self.label3.grid(row=2,sticky=W,columnspan=2)
         self.entry3=Entry(self.frame)
         self.entry3.grid(row=3,sticky=W+E,columnspan=2)

@@ -37,6 +37,7 @@ class ttkCalendar:
 
         #will be used by main root window
         self.top=tkinter.Toplevel()
+        self.top.title("Calender")
         self.flag=True
         self._okbtn_clicked=False
         

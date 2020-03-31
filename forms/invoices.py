@@ -72,6 +72,7 @@ class FormInvoices:
 class FormEditInvoice:
     def __init__(self):
         self.frame=Toplevel()
+        self.frame.title("Invoice details")
         self.frame1=Frame(self.frame)#,width=100,height=200)
         label_entry(self.frame1,'Invoice#:')
         self.frame1.pack(side=TOP)
