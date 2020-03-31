@@ -96,7 +96,7 @@ class FormMenu:
 
         #button products
         self.btnproducts = Button(self.buttons,command=self.products_click)
-        self.imgprdt=PhotoImage(file="images/products.png")#self.btnproducts['font']=("Helvetica", 16)
+        self.imgprdt=PhotoImage(file="images/products1.png")#self.btnproducts['font']=("Helvetica", 16)
         self.btnproducts['image']=self.imgprdt
         self.btnproducts.pack(side='top')#, fill='x')
         lbl1=Label(self.buttons,text="Products", style="BW.TLabel").pack()
@@ -119,7 +119,7 @@ class FormMenu:
 
         #background label
         #-------------------------------------------
-        self.imgback=PhotoImage(file="images/logo2.png")
+        self.imgback=PhotoImage(file="images/logo4.png")
         self.lblbackground= Label(self.frame, style="BW.TLabel",borderwidth=0,anchor='w')
 
         #Second Col -- in widgets
