@@ -175,4 +175,3 @@ class LookupList:
         for p in items:
             self.mlb.insert(END, (p.id,p.name,p.description,p.price))
         self.mlb.selection_set(0) #set first row selected
-        

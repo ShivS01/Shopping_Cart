@@ -64,7 +64,7 @@ class FormAddProduct:
         self._init_widgets()
         
     def _init_widgets(self):
-        self.label1=Label(self.frame,text="Product #")
+        self.label1=Label(self.frame,text="Product Name")
         self.label1.grid(row=0,sticky=W)
         self.entry1=Entry(self.frame)
         self.entry1.grid(row=1,column=0)
