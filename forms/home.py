@@ -58,9 +58,9 @@ class FormMenu:
         imgdir="images/24x24/"
 
         self.toolbar.imghome=PhotoImage(file=imgdir+"home.png")
-        self.toolbar.imgcalc=PhotoImage(file=imgdir+"calc.gif")
-        self.toolbar.imgcalander=PhotoImage(file=imgdir+"date.gif")
-        self.toolbar.imgexit=PhotoImage(file=imgdir+"exit.gif")
+        self.toolbar.imgcalc=PhotoImage(file=imgdir+"calc.png")
+        self.toolbar.imgcalander=PhotoImage(file=imgdir+"date.png")
+        self.toolbar.imgexit=PhotoImage(file=imgdir+"exit.png")
         self.toolbar.imghelp=PhotoImage(file=imgdir+"help.png")
 
         butcompany=Button(self.toolbar,image=self.toolbar.imghome,command="")
